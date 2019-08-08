@@ -1,0 +1,18 @@
+server:
+  port: 7003
+spring:  application:    name: spring-cloud-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/  instance:    instance-id: gateway.com
+    prefer-ip-address: true
+zuul:
+  ignoredServices: '*'
+  routes:
+    user: 
+     path: /myuser/**
+     serviceId: spring-cloud-user
+    order:
+      path: /myorder/**
+      serviceId: spring-cloud-order

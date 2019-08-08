@@ -1,0 +1,7 @@
+server:
+  port: 7001
+spring:  application:    name: spring-cloud-order
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/  instance:    instance-id: spring-cloud-order
