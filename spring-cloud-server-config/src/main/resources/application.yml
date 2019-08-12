@@ -5,5 +5,13 @@ spring:  application:    name: spring-cloud-server-config  cloud:
     config:
       server:
         git:
-          uri:      
-      
+          uri: https://github.com/cxy-java/config.git
+          skipSslValidation: true
+          username: 314956663@qq.com
+          password: xxf5131421      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/
+  instance:
+     instance-id: spring-cloud-server-config      

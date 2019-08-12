@@ -1,9 +1,26 @@
 server:
   port: 7002
 spring:  application:    name: spring-cloud-user
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3306/mytest?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: spring-cloud-order-fescar-service-group
+logging:
+  level:
+    io:
+      seata: debug        
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:7000/eureka/
   instance:
     instance-id: spring-cloud-user
+    
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
