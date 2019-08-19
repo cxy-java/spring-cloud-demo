@@ -45,7 +45,7 @@ public class UserService {
 	public Iterable<User> searchHighlight() {
 		String preTag = "<font color='#dd4b39'>";// google的色值
 		String postTag = "</font>";
-		QueryBuilder match = new MatchQueryBuilder("desc", "魔头");
+		QueryBuilder match = new MatchQueryBuilder("desc", "明");
 		SearchQuery searchQuery = new NativeSearchQueryBuilder().withQuery(match)
 				.withHighlightFields(new HighlightBuilder.Field("desc").preTags(preTag).postTags(postTag)).build();
 		AggregatedPage<User> page = template.queryForPage(searchQuery, User.class, new SearchResultMapper() {

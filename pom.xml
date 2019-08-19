@@ -41,5 +41,6 @@
 		<module>spring-cloud-hystrix</module>
 		<module>spring-cloud-zipkin</module>
 		<module>spring-cloud-elasticsearch</module>
+		<module>spring-cloud-neo4j</module>
 	</modules>
 </project>

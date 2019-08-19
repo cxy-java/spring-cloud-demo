@@ -1,0 +1,16 @@
+server:
+  port: 7006  compression:    enabled: false
+
+spring:  application:    name: spring-cloud-zipkin
+    
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:7000/eureka/
+    instance:
+        instance-id: ${spring.application.name}:${server.port}
+        prefer-ip-address: true
+        
+armeria:  ports:  - ip: 127.0.0.1
+    port: 7007
+    protocols:    - HTTP

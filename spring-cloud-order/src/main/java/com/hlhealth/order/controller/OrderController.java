@@ -32,8 +32,8 @@ public class OrderController {
 
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	public String getOrder() {
-		String user = restTemplate.getForObject("http://spring-cloud-user:7002/user/get", String.class);
-		user = userFeign.getUser();
+		//String user = restTemplate.getForObject("http://spring-cloud-user:7002/user/get", String.class);
+		String user = userFeign.getUser();
 		return user + "-" + "order";
 	}
 
@@ -45,5 +45,10 @@ public class OrderController {
 	@RequestMapping(value = "/addorder", method = RequestMethod.GET)
 	public void addOrder() {
 		orderService.addOrder();
+	}
+	
+	@RequestMapping(value = "/localorder", method = RequestMethod.GET)
+	public void addLocalOrder() {
+		orderService.addLocalOrder();
 	}
 }

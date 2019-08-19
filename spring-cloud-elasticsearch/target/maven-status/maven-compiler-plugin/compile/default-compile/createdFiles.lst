@@ -1,0 +1,6 @@
+com\hlhealth\elasticsearch\controller\ElasticSearchController.class
+com\hlhealth\elasticsearch\model\User.class
+com\hlhealth\elasticsearch\service\UserService$1.class
+com\hlhealth\elasticsearch\service\UserService.class
+com\hlhealth\elasticsearch\App.class
+com\hlhealth\elasticsearch\service\UserRepository.class

@@ -8,4 +8,6 @@ import com.hlhealth.order.moder.Order;
 public interface OrderMapper {
 
 	void save(Order order);
+	
+	void delete(String orderNo);
 }

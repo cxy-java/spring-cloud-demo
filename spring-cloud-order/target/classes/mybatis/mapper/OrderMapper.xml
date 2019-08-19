@@ -22,4 +22,10 @@
         </trim>
     </insert>
 
+	<delete id="delete" parameterType="string">
+		delete
+		from 
+		t_order
+		where orderno=#{orderno,jdbcType=VARCHAR}
+	</delete>
 </mapper>

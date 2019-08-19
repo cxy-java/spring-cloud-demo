@@ -3,8 +3,11 @@ server:
 spring:  application:    name: spring-cloud-order  datasource:    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.99.100:3306/mytest?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: root  cloud:    alibaba:      seata:        tx-service-group: spring-cloud-order-fescar-service-group
-        
+    password: root  cloud:    alibaba:      seata:        tx-service-group: spring-cloud-order-fescar-service-group  zipkin:    locator:      discovery:        enabled: true
+    base-url: http://192.168.99.100:9411/
+  sleuth:
+    sampler:
+      probability: 0.5
 logging:  level:    io:
       seata: debug
       
@@ -15,3 +18,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:7000/eureka/  instance:    instance-id: spring-cloud-order
+    

@@ -10,6 +10,14 @@ spring:  application:    name: spring-cloud-user
     alibaba:
       seata:
         tx-service-group: spring-cloud-order-fescar-service-group
+  zipkin:
+    locator:
+      discovery:
+        enabled: true
+    base-url: http://192.168.99.100:9411/
+  sleuth:
+    sampler:
+      probability: 0.5
 logging:
   level:
     io:
